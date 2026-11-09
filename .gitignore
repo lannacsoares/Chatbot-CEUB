@@ -1,0 +1,40 @@
+# Segredos: nunca commitar (NFR-05)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+cookies*.txt
+cookies*.json
+sessao*
+session*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# Modelos treinados e índices gerados (ficam no contêiner, não no Git)
+*.faiss
+*.pt
+*.bin
+*.safetensors
+*.pkl
+*.joblib
+models/
+data/indices/
+
+# Páginas e dados lidos do Espaço Aluno (dado pessoal, só em memória)
+espaco-aluno-dump/
+*.har
+
+# Editor e sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
