@@ -33,6 +33,9 @@ data/indices/
 espaco-aluno-dump/
 *.har
 
+# Documento do projeto em PDF (fica só local)
+Chatbot UniCEUB*.pdf
+
 # Editor e sistema
 .vscode/
 .idea/
