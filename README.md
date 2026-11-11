@@ -6,6 +6,10 @@ Projeto em grupo da matéria de **Inteligência Artificial**.
 
 > **Só responde e orienta.** O chatbot não executa nenhuma ação no Espaço Aluno: quem abre um processo, por exemplo, é o aluno.
 
+## Escopo da v1
+
+A v1 é um **MVP simples, só para a entrega da disciplina**: servidor rodando direto no computador de um integrante, consultas de faltas, falta agendada e professor, classificador simples e um ajuste pequeno dos embeddings. Docker, nuvem, BERTimbau, notas, horários, calendário e as outras evoluções estão mapeados em [`docs/next-steps.md`](docs/next-steps.md) e entram depois da v1 (decisão D-008).
+
 ## Status
 
 🚧 **Em planejamento (fase 1 de 3).** Os documentos, a arquitetura e o plano estão prontos; ainda não há código. A primeira tarefa é [01-01 · Login e leitura do Espaço Aluno](docs/specs/01-01-login-e-leitura-do-espaco-aluno.md), que testa o maior risco do projeto.
@@ -30,10 +34,10 @@ Detalhes em [`docs/architecture.md`](docs/architecture.md).
 | Servidor | Python, FastAPI |
 | Tela | HTML e JavaScript, servidos pelo servidor |
 | Busca nos documentos | sentence-transformers, FAISS, pdfplumber |
-| Classificador | scikit-learn (e, se couber, BERTimbau) |
+| Classificador | scikit-learn (TF-IDF e regressão logística; BERTimbau depois da v1) |
 | Leitor do Espaço Aluno | requests, BeautifulSoup |
 | Modelo de linguagem | Groq (plano gratuito) |
-| Execução | Docker, no computador de um integrante |
+| Execução | Python em ambiente virtual, no computador de um integrante (Docker depois da v1) |
 | Treino | Kaggle ou Colab (gratuitos) |
 
 ## Regras do projeto
@@ -56,9 +60,10 @@ Detalhes em [`docs/architecture.md`](docs/architecture.md).
 | [`docs/ai-features.md`](docs/ai-features.md) | O que o modelo faz e o que acontece quando ele erra |
 | [`docs/data-classification.md`](docs/data-classification.md) | Dados pessoais que passam pelo chatbot |
 | [`docs/wireframes.md`](docs/wireframes.md) | As três telas: login, conversa e aviso de privacidade |
-| [`docs/decisions.md`](docs/decisions.md) | Decisões D-001 a D-007, cada uma com o motivo |
+| [`docs/decisions.md`](docs/decisions.md) | Decisões D-001 a D-008, cada uma com o motivo |
 | [`docs/research.md`](docs/research.md) | Pesquisa que embasou as decisões |
-| [`docs/plan.md`](docs/plan.md) | 3 fases, 11 tarefas e 4 frentes |
+| [`docs/plan.md`](docs/plan.md) | 3 fases, 11 tarefas e 4 frentes (escopo da v1) |
+| [`docs/next-steps.md`](docs/next-steps.md) | O que fica para depois da v1 |
 | [`docs/specs/`](docs/specs/) | Uma especificação por tarefa, com "Como testar" |
 | [`docs/test-plan.md`](docs/test-plan.md) | O que falta verificar |
 | [`docs/playbooks/`](docs/playbooks/) | Um guia por frente de trabalho |
@@ -74,7 +79,7 @@ Cada pessoa leva uma frente e faz uma tarefa por vez, em ordem:
 | A · Espaço Aluno | Login e leitura das páginas | 01-01, 02-04 |
 | B · Documentos | PDFs, trechos, embeddings e busca | 01-02, 02-01, 02-02 |
 | C · Classificador | Perguntas de exemplo e treino | 01-03, 02-03 |
-| D · Servidor | Servidor, tela, Groq, Docker e medição | 01-04, 03-01 a 03-03 |
+| D · Servidor | Servidor, tela, Groq e medição | 01-04, 03-01 a 03-03 |
 
 ## Equipe
 

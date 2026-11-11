@@ -74,3 +74,17 @@ Todas as decisões do projeto, em um só lugar, a mais nova por último. Uma dec
 - **Fontes:** nenhuma pesquisa; a página oficial da Groq sobre retenção de dados não foi lida (T-003).
 - **Situação:** decided
 - **Para testar:** T-003, antes de usar dados reais de alunos, em `docs/test-plan.md`.
+
+## D-008 · O que entra na v1 (MVP da disciplina) e o que fica para depois
+
+- **Decisão:** a v1 é um MVP simples, feito só para a entrega da disciplina. O escopo amplo que já estava mapeado (Docker, servidores e nuvem, BERTimbau e qualquer outra evolução) continua registrado, mas passa a ser **próximos passos, depois da v1**, em `docs/next-steps.md`.
+  - **Entra na v1:** servidor FastAPI rodando direto no computador de um integrante, sem Docker, sem túnel e sem nuvem; consultas pessoais de faltas por matéria, falta agendada e professor (FR-03 a FR-05); classificador com TF-IDF e regressão logística; ajuste pequeno dos embeddings, com medição antes e depois; conjunto de teste de 20 perguntas mais 10 fora do escopo.
+  - **Fica para depois da v1:** notas, horários, calendário e caminho de processo (FR-06 a FR-09); pergunta que mistura os dois tipos; BERTimbau; Docker; hospedagem em nuvem; túnel e acesso pelo celular; conjunto de teste de 40 perguntas; uso por alunos de fora do grupo.
+  - Na v1, uma pergunta sobre algo que ficou para depois (por exemplo, notas) conta como fora do escopo: o chatbot diz que ainda não consulta isso e indica o Espaço Aluno ou a secretaria (FR-11).
+- **Motivo:** o plano completo foi estimado em 24 a 34 pessoa-dias, contra 16 a 20 realmente disponíveis em cerca de 2 semanas de trabalho (estimativas do agente, não medidas). O professor pediu um protótipo funcional e bem explicado, em vez de um sistema complexo e inacabado. O maior risco (entrar no Espaço Aluno, T-008) ainda não foi testado, e cada tipo de consulta exige um leitor de página diferente.
+- **Alternativas:** manter o escopo completo (descartada pelo prazo); cortar o treino (descartada, D-004 continua valendo).
+- **Efeito em decisões anteriores:** D-004 continua: o treino segue fixo, em tamanho menor. D-005 muda em parte: o Docker sai da v1, e o computador de um integrante continua sendo onde roda. D-006 muda em parte: BERTimbau e Docker saem da v1. D-001, D-002, D-003 e D-007 não mudam.
+- **Decidido por:** Erick, em 2026-11-11, depois da análise de viabilidade do plano. O grupo ainda precisa confirmar (a revisão do PR da Lanna serve a isso).
+- **Fontes:** análise de viabilidade desta sessão, sobre `docs/plan.md`, `docs/requirements.md` e `docs/architecture.md`. Sem pesquisa externa.
+- **Situação:** decided
+- **Para testar:** T-008 decide, até 13/11, se as consultas pessoais da v1 são possíveis; sem isso, a v1 segue só com documentos públicos.

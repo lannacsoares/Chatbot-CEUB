@@ -1,10 +1,10 @@
 # Guia da frente D · Servidor
 
-> **Em resumo:** esta frente cuida do servidor, da tela, da Groq e do contêiner, e junta o que as outras três frentes entregam. Também mede o resultado e prepara a apresentação. Depende das outras frentes na fase 3.
+> **Em resumo:** esta frente cuida do servidor, da tela, da Groq, e junta o que as outras três frentes entregam. Também mede o resultado e prepara a apresentação. Depende das outras frentes na fase 3.
 
 ## O que esta função faz
 
-- Sobe o servidor FastAPI em Docker com a tela de conversa e chama a Groq (01-04, T-001 a T-003).
+- Sobe o servidor FastAPI (sem Docker na v1) com a tela de conversa e chama a Groq (01-04, T-001 a T-003).
 - Junta classificador, busca, leitor do Espaço Aluno e Groq no fluxo completo (03-01).
 - Mede o chatbot contra NFR-07, NFR-08 e NFR-09 (03-02, T-007).
 - Prepara e ensaia a apresentação sem slides (03-03).

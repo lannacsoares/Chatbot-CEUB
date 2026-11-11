@@ -4,13 +4,28 @@
 
 > **Em resumo:** um servidor Python (FastAPI), em contêiner Docker no computador de um integrante do grupo, serve uma tela de conversa. A cada pergunta, um classificador treinado pelo grupo decide se ela é geral, pessoal ou fora do escopo. Perguntas gerais usam uma busca por embeddings ajustados pelo grupo nos documentos públicos do UniCEUB; perguntas pessoais leem o Espaço Aluno de quem fez login. O modelo da Groq só escreve a resposta, a partir dos trechos ou dos campos que o servidor entregou. Senha, sessão e dados do aluno ficam só na memória do servidor e são descartados. Tudo é gratuito.
 
+## Escopo da v1 e próximos passos (D-008)
+
+A v1 é um MVP simples, só para a entrega da disciplina. O desenho abaixo continua sendo o destino, mas a v1 faz menos:
+
+| Peça | Na v1 | Depois da v1 |
+|---|---|---|
+| Execução | Servidor Python direto no computador de um integrante | Docker, nuvem, túnel e acesso pelo celular |
+| Classificador | TF-IDF e regressão logística (scikit-learn) | BERTimbau |
+| Consultas pessoais | Faltas, falta agendada e professor | Notas, horários, calendário e caminho de processo |
+| Pergunta mista | Não | Usa as duas consultas |
+| Ajuste dos embeddings | Pequeno, poucos pares | Mais pares e mais documentos |
+| Teste | 20 perguntas e 10 fora do escopo | 40 perguntas nas 8 consultas |
+
+A lista completa está em `docs/next-steps.md`.
+
 ## Visão geral
 
 | Peça | O que faz | Tecnologia | Onde roda |
 |---|---|---|---|
 | Tela | Login, conversa e aviso de privacidade (`docs/wireframes.md`) | HTML e JavaScript, servidos pelo próprio servidor | Navegador do aluno |
-| Servidor | Recebe o login e as perguntas, junta as peças e devolve a resposta | Python, FastAPI | Contêiner Docker no computador de um integrante (D-005, D-006) |
-| Classificador (AI-02) | Decide o tipo da pergunta e qual consulta pessoal | scikit-learn e, se couber, BERTimbau, treinados pelo grupo | Dentro do servidor, em CPU |
+| Servidor | Recebe o login e as perguntas, junta as peças e devolve a resposta | Python, FastAPI | Computador de um integrante, sem Docker na v1 (D-005, D-006, D-008) |
+| Classificador (AI-02) | Decide o tipo da pergunta e qual consulta pessoal | scikit-learn (TF-IDF e regressão logística) na v1; BERTimbau depois da v1; treinado pelo grupo | Dentro do servidor, em CPU |
 | Busca nos documentos (AI-03) | Acha os trechos mais parecidos com a pergunta | Embeddings ajustados pelo grupo (partida: `multilingual-e5-small`) e índice FAISS | Dentro do servidor, em CPU |
 | Leitor do Espaço Aluno | Entra com a conta do aluno e extrai só os campos da pergunta | requests e BeautifulSoup | Dentro do servidor |
 | Escritor da resposta (AI-01) | Escreve a resposta em português com o que o servidor entregou | Groq, plano gratuito, modelo aberto com chamada de ferramentas (D-001) | Serviço externo |
@@ -20,9 +35,9 @@
 1. O aluno entra com usuário e senha do Espaço Aluno (FR-10, D-003). O servidor guarda a sessão só na memória, ligada àquela conversa.
 2. O aluno envia uma pergunta. O classificador decide o tipo.
 3. **Geral:** a busca acha os trechos mais parecidos nos documentos públicos. O servidor manda à Groq a pergunta e esses trechos. A resposta cita o documento de origem (FR-12). Se nenhum trecho for parecido o bastante, o chatbot diz que não tem conteúdo suficiente (FR-11).
-4. **Pessoal:** o leitor entra no Espaço Aluno a partir do `/Painel`, abre a página da consulta (faltas, falta agendada, professor, notas, horários, calendário, caminho de processo), extrai só os campos necessários e o servidor manda à Groq a pergunta e esses campos (D-007). Se a sessão expirou, o chatbot avisa e pede novo login (FR-13).
+4. **Pessoal:** o leitor entra no Espaço Aluno a partir do `/Painel`, abre a página da consulta (na v1: faltas, falta agendada e professor; o resto, depois da v1), extrai só os campos necessários e o servidor manda à Groq a pergunta e esses campos (D-007). Se a sessão expirou, o chatbot avisa e pede novo login (FR-13).
 5. **Fora do escopo:** o servidor responde que não tem conteúdo suficiente, sem chamar a Groq (NFR-08).
-6. Pergunta que mistura os dois tipos usa as duas consultas.
+6. (Depois da v1) Pergunta que mistura os dois tipos usa as duas consultas.
 7. Ao fim da conversa (ou ao sair), senha, sessão, campos lidos e texto da conversa são descartados (NFR-10).
 
 ## Como os componentes são preparados (fora do ar, antes da demonstração)
@@ -30,7 +45,7 @@
 - **Documentos:** a Lanna envia os PDFs públicos do UniCEUB; pdfplumber extrai o texto; o texto é quebrado em trechos; o modelo de embeddings gera os vetores; FAISS guarda o índice em arquivo local. Documentos públicos não são dados pessoais.
 - **Ajuste dos embeddings:** o grupo escreve pares de pergunta e trecho (a Groq pode rascunhar, o grupo revisa), separa treino e teste e ajusta o modelo no Kaggle ou no Colab gratuitos. Mede-se quantas vezes o trecho certo aparece entre os primeiros resultados, antes e depois (T-004). Depois do ajuste, os vetores de todos os trechos são gerados de novo.
 - **Classificador:** o grupo escreve perguntas de exemplo por tipo, sem dado real de aluno, separa treino e teste, compara uma linha de base simples com o modelo maior e mede acerto por tipo (T-005).
-- Os arquivos dos modelos treinados e o índice ficam no contêiner do servidor.
+- Os arquivos dos modelos treinados e o índice ficam em arquivos locais do servidor.
 
 ## Que dados saem do computador do grupo
 
@@ -71,7 +86,7 @@ Na memória do servidor ficam, durante a conversa: a sessão do Espaço Aluno e 
 ## O que fica para o plano
 
 - Qual integrante hospeda o site na demonstração e se a turma acessa também pelo celular, com um túnel gratuito (ainda não pesquisado).
-- Se o classificador final será BERTimbau ou o modelo simples; sai da comparação de T-005.
+- BERTimbau no classificador: depois da v1 (D-008).
 - De onde vem cada consulta, em especial o calendário acadêmico (documento público ou Espaço Aluno).
 
 ## Decisões desta etapa

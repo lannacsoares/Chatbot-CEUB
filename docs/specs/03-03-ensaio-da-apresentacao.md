@@ -15,12 +15,12 @@ Prepara e ensaia a apresentação em aula, sem slides, nos três pontos que o pr
 ## Pronta quando
 
 - [ ] Há um roteiro curto, em lista, com o que cada pessoa explica (cada integrante sabe explicar a própria frente).
-- [ ] O grupo decidiu qual computador hospeda a demonstração, se a turma acessa só pela tela ou também pelo celular (túnel gratuito), e testou o caminho.
+- [ ] O grupo decidiu qual computador hospeda a demonstração, e testou o caminho. Na v1 a turma vê a demonstração só pela tela do computador; celular e túnel ficam para depois da v1 (D-008).
 - [ ] Os trechos de código a mostrar foram escolhidos: leitura dos PDFs, ajuste dos embeddings, classificador, juntar o fluxo.
 - [ ] A demonstração tem exemplos escolhidos que cobrem as três rotas e uma pergunta que o chatbot não sabe responder.
 - [ ] A demonstração não mostra a senha, o cookie nem a chave da Groq: conferido no ensaio.
 - [ ] O plano B está definido para o caso de a Groq, a internet ou o Espaço Aluno falharem na hora (por exemplo, demonstrar só os documentos públicos e mostrar os resultados medidos).
-- [ ] Houve pelo menos um ensaio completo, cronometrado, com o contêiner iniciado do zero.
+- [ ] Houve pelo menos um ensaio completo, cronometrado, com o servidor iniciado do zero.
 
 ## Vem de
 

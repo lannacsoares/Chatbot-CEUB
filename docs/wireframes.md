@@ -49,8 +49,8 @@ A forma exata desta tela depende da decisão de arquitetura sobre como o chatbot
 |  Chatbot UniCEUB          [Nova conversa] [Sair] |
 |--------------------------------------------|
 |  Chatbot: Olá! Pergunte sobre as regras    |
-|  da faculdade ou sobre as suas faltas,     |
-|  notas e horários.                         |
+|  da faculdade ou sobre as suas faltas e     |
+|  professores (v1; notas e horários depois).|
 |                                            |
 |  Você: Quantas faltas tenho em IA?         |
 |                                            |

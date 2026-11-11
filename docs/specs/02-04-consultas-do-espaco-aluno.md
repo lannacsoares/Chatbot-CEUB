@@ -4,7 +4,7 @@
 
 ## O que faz
 
-Transforma o script de 01-01 em um módulo com uma função por consulta, cada uma devolvendo só os campos que a pergunta precisa. Ordem: faltas por matéria, falta agendada e professor da matéria; depois notas, horários e calendário acadêmico (se ele estiver no Espaço Aluno) e o caminho para abrir um processo (um texto de orientação, sem abrir o processo). Detecta quando a sessão expirou.
+Transforma o script de 01-01 em um módulo com uma função por consulta, cada uma devolvendo só os campos que a pergunta precisa. Na v1: faltas por matéria, falta agendada e professor da matéria. Notas, horários, calendário acadêmico e caminho para abrir um processo ficam para depois da v1 (D-008, `docs/next-steps.md`). Detecta quando a sessão expirou.
 
 ## O que não faz
 
@@ -20,7 +20,6 @@ Transforma o script de 01-01 em um módulo com uma função por consulta, cada u
 - [ ] Quando a sessão expira, o módulo avisa de um jeito que o servidor pode mostrar ao aluno (FR-13).
 - [ ] Quando o layout muda ou um campo não aparece, a consulta diz que não conseguiu ler em vez de inventar um valor.
 - [ ] Nada é gravado em disco, em log nem em arquivo do projeto (NFR-05, NFR-10).
-- [ ] Está anotado de onde vem o calendário acadêmico (Espaço Aluno ou documento público).
 
 ## Vem de
 

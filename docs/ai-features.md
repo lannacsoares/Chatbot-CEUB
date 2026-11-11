@@ -30,7 +30,7 @@
 ## AI-02 · Classificar o tipo da pergunta
 
 - **Função:** decidir, antes de qualquer consulta, para onde a pergunta vai: documentos públicos (geral), Espaço Aluno (pessoal, e qual consulta: faltas, falta agendada, professor, notas, horários, calendário, caminho de processo) ou fora do escopo. Pergunta fora do escopo recebe a resposta "não tenho conteúdo suficiente" sem gastar uma chamada da Groq, o que ajuda no limite do plano gratuito, no tempo de resposta (NFR-09) e em NFR-08.
-- **Como é treinado:** com perguntas de exemplo escritas pelo grupo para cada tipo, separadas em treino e teste. Modelo de partida: BERTimbau ou scikit-learn, treinado no Kaggle ou no Colab gratuitos. Nenhum dado real de aluno entra no treino (NFR-10); as perguntas de exemplo só têm o jeito de perguntar.
+- **Como é treinado:** com perguntas de exemplo escritas pelo grupo para cada tipo, separadas em treino e teste. Modelo da v1: scikit-learn (TF-IDF e regressão logística), que treina em CPU; BERTimbau fica para depois da v1 (D-008). Nenhum dado real de aluno entra no treino (NFR-10); as perguntas de exemplo só têm o jeito de perguntar.
 - **Como se mede:** acerto geral e por tipo no conjunto de teste (T-005). A meta de acerto ainda precisa ser combinada pelo grupo.
 - **Quando erra:** pergunta pessoal classificada como geral recebe resposta dos documentos e o lembrete de conferir no Espaço Aluno; pergunta fora do escopo classificada como outro tipo tende a ser pega pela falta de trecho suficiente na busca (FR-11). Caso de baixa confiança do classificador: decisão a tomar na implementação, proposta de usar o caminho que admite não saber.
 
@@ -64,3 +64,9 @@ O produto nunca trata a resposta do modelo como certa. Como ele só lê e não e
 - O modelo não executa ações no Espaço Aluno.
 - O modelo não guarda histórico de conversas.
 - O modelo não acessa nada fora das ferramentas que o grupo construir.
+
+## O que vale na v1 (D-008)
+
+- As ferramentas da v1 são a busca nos documentos públicos e três consultas ao Espaço Aluno: faltas, falta agendada e professor. Notas, horários, calendário e caminho de processo ficam para depois da v1.
+- Uma pergunta sobre algo que ficou para depois é tratada como fora do escopo: o chatbot diz que ainda não consulta isso e indica o Espaço Aluno ou a secretaria.
+- Quem decide o caminho é o classificador, que roda antes do modelo de linguagem; o modelo da Groq só escreve a resposta. Pergunta que mistura os dois tipos fica para depois da v1.
