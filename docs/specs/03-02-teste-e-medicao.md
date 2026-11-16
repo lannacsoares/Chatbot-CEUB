@@ -4,7 +4,7 @@
 
 ## O que faz
 
-Monta o conjunto de perguntas de teste do chatbot e mede se ele atinge as metas: 40 perguntas (5 por tipo de consulta, nas 8 consultas) para precisão, 10 perguntas fora do escopo para honestidade e o tempo de resposta. Escreve os resultados e as limitações encontradas, para mostrar na apresentação.
+Monta o conjunto de perguntas de teste do chatbot e mede se ele atinge as metas: 20 perguntas (gerais e das 3 consultas pessoais da v1) para precisão; as 40 perguntas nas 8 consultas ficam para depois da v1 (D-008), 10 perguntas fora do escopo para honestidade e o tempo de resposta. Escreve os resultados e as limitações encontradas, para mostrar na apresentação.
 
 ## O que não faz
 
@@ -14,7 +14,7 @@ Monta o conjunto de perguntas de teste do chatbot e mede se ele atinge as metas:
 
 ## Pronta quando
 
-- [ ] As 40 perguntas de teste e as 10 fora do escopo estão escritas, e a resposta certa de cada uma foi conferida com a fonte (documento ou o próprio Espaço Aluno).
+- [ ] As 20 perguntas de teste e as 10 fora do escopo estão escritas, e a resposta certa de cada uma foi conferida com a fonte (documento ou o próprio Espaço Aluno).
 - [ ] O grupo concordou com as metas de NFR-07 (acertar ao menos 80%), NFR-08 (admitir não saber em ao menos 90%) e NFR-09 (até 15 segundos em ao menos 90%) ou combinou outras.
 - [ ] Os três números foram medidos e estão escritos, com os erros listados.
 - [ ] O tempo de resposta no computador onde a demonstração vai rodar foi medido, incluindo a partida com os modelos carregados (T-007).

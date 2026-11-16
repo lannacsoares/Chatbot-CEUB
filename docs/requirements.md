@@ -2,6 +2,8 @@
 
 **Projeto:** chatbot-uniceub · **Versão:** 0.1 · **Data:** 2026-11-09
 
+> **Escopo da v1 (D-008):** a v1 é um MVP simples, só para a entrega da disciplina. Os itens marcados "Após a v1" ficam registrados, mas só entram depois. Os próximos passos estão em `docs/next-steps.md`.
+
 > **Em resumo:** o aluno do UniCEUB conversa com um chatbot em um site e recebe respostas sobre as regras da faculdade e sobre a própria situação no Espaço Aluno (faltas, professores, notas, horários, calendário, caminho de processos). O chatbot só responde e orienta. Tudo precisa ser gratuito, e a entrega final é em dezembro. Itens marcados como "proposto" foram sugeridos pelo agente a pedido do grupo e podem ser ajustados.
 
 ## O que o sistema é
@@ -19,10 +21,10 @@ O que o aluno precisa conseguir fazer.
 | FR-03 | O aluno informa quantas faltas tem em uma matéria e o chatbot responde com o valor mostrado no Espaço Aluno | Primeira versão | Dito |
 | FR-04 | O aluno pergunta se há falta agendada e o chatbot responde com o que consta no Espaço Aluno | Primeira versão | Dito |
 | FR-05 | O aluno pergunta quem é o professor de uma matéria e o chatbot responde com o nome que consta no Espaço Aluno | Primeira versão | Dito |
-| FR-06 | O aluno pergunta como abrir um processo e o chatbot indica o caminho no Espaço Aluno, sem abrir o processo | Primeira versão | Dito |
-| FR-07 | O aluno consulta as próprias notas pelo chatbot | Primeira versão | Dito |
-| FR-08 | O aluno consulta os próprios horários pelo chatbot | Primeira versão | Dito |
-| FR-09 | O aluno consulta o calendário acadêmico pelo chatbot | Primeira versão | Dito |
+| FR-06 | O aluno pergunta como abrir um processo e o chatbot indica o caminho no Espaço Aluno, sem abrir o processo | Após a v1 (D-008) | Dito |
+| FR-07 | O aluno consulta as próprias notas pelo chatbot | Após a v1 (D-008) | Dito |
+| FR-08 | O aluno consulta os próprios horários pelo chatbot | Após a v1 (D-008) | Dito |
+| FR-09 | O aluno consulta o calendário acadêmico pelo chatbot | Após a v1 (D-008) | Dito |
 | FR-10 | Para consultas pessoais, o aluno entra com a própria conta do Espaço Aluno | Primeira versão | Dito: uso do login do aluno |
 | FR-11 | Quando não souber responder ou não tiver acesso à informação, o chatbot diz isso e, quando possível, indica onde o aluno encontra, sem inventar a resposta | Primeira versão | Dito: o chatbot deve responder que não tem conteúdo suficiente, em vez de inventar |
 | FR-12 | Nas respostas gerais, o chatbot indica de qual documento a informação veio | Primeira versão | Proposto |
@@ -40,7 +42,7 @@ Como o sistema precisa se comportar.
 | NFR-04 | O chatbot é somente leitura: não executa nenhuma ação no Espaço Aluno | Primeira versão | Dito |
 | NFR-05 | Senha, cookie de sessão e token não são gravados em arquivos do projeto, no repositório nem em logs | Primeira versão | Dito (não vão para os arquivos do projeto) |
 | NFR-06 | O chatbot responde em português do Brasil | Primeira versão | Proposto |
-| NFR-07 | Precisão: o chatbot acerta pelo menos 80% de um conjunto de 40 perguntas de teste (5 por tipo de consulta, nas 8 consultas), conferindo cada resposta com a fonte | Primeira versão | Proposto |
+| NFR-07 | Precisão: o chatbot acerta pelo menos 80% de um conjunto de 20 perguntas de teste (gerais e das 3 consultas pessoais da v1), conferindo cada resposta com a fonte; o conjunto de 40 perguntas nas 8 consultas fica para depois da v1 (D-008) | Primeira versão | Proposto |
 | NFR-08 | Honestidade: em um conjunto de 10 perguntas fora do escopo, o chatbot admite não saber ou orienta, sem inventar, em pelo menos 90% | Primeira versão | Proposto |
 | NFR-09 | Desempenho: a resposta chega em até 15 segundos em pelo menos 90% das perguntas do conjunto de teste | Primeira versão | Proposto |
 | NFR-10 | Os dados lidos do Espaço Aluno para responder são usados só na hora e descartados; o chatbot não os guarda depois da conversa | Primeira versão | Dito |
@@ -59,6 +61,7 @@ Como o sistema precisa se comportar.
 
 ## Fora da primeira versão
 
+- Notas, horários, calendário acadêmico e caminho de processo (FR-06 a FR-09), pergunta que mistura os dois tipos, Docker, hospedagem em nuvem, BERTimbau e acesso pelo celular (D-008, `docs/next-steps.md`).
 - Executar ações no Espaço Aluno, como abrir um processo.
 - Uso por alunos de fora do grupo.
 - Aplicativo e WhatsApp.

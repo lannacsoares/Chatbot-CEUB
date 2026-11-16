@@ -14,7 +14,7 @@ Ajusta o modelo de embeddings com pares de pergunta e trecho dos documentos do U
 
 ## Pronta quando
 
-- [ ] Os pares de pergunta e trecho foram escritos (a Groq pode rascunhar as perguntas, o grupo revisa todas) e cobrem os principais documentos.
+- [ ] Os pares de pergunta e trecho foram escritos (a Groq pode rascunhar as perguntas, o grupo revisa todas) e cobrem os principais documentos. Na v1 o conjunto é pequeno (proposta: cerca de 60 pares, uns 15 deles de teste); mais pares ficam para depois da v1 (D-008).
 - [ ] Os pares de teste foram separados antes do treino e não entram nele.
 - [ ] O treino rodou até o fim em GPU gratuita, e o tempo gasto e a cota usada estão anotados (T-006).
 - [ ] Há uma tabela antes e depois do ajuste, com o mesmo conjunto de teste (T-004).

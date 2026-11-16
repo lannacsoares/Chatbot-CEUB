@@ -11,3 +11,4 @@ Uma linha por marco, o mais novo por último.
 | 2026-11-09 | Modelagem fechada (`docs/ai-features.md`) | Está escrito o que o modelo de IA faz no produto e o que acontece quando ele erra; dá para decidir a arquitetura |
 | 2026-11-09 | Arquitetura fechada (`docs/architecture.md`) | Estão decididos o serviço de modelo, os documentos e o treino, a entrada no Espaço Aluno, a hospedagem, a stack e o tratamento dos dados pessoais; dá para montar o plano |
 | 2026-11-09 | Plano pronto (`docs/plan.md`, `docs/specs/`) | Estão escritas 3 fases e 11 tarefas, cada uma com uma especificação; falta preparar o repositório e escolher quem leva cada frente |
+| 2026-11-11 | Escopo da v1 fechado (`docs/decisions.md` D-008, `docs/next-steps.md`) | A v1 é um MVP simples para a entrega da disciplina; o escopo amplo ficou registrado como próximos passos depois da v1 |

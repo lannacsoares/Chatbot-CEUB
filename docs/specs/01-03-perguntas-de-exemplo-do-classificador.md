@@ -4,7 +4,7 @@
 
 ## O que faz
 
-Cria o conjunto de perguntas com que o classificador vai ser treinado e testado, em um arquivo CSV com a pergunta e o tipo. Os tipos são: geral (documentos públicos), pessoal com a consulta (faltas, falta agendada, professor, notas, horários, calendário, caminho de processo) e fora do escopo. O conjunto de teste é separado antes de qualquer treino.
+Cria o conjunto de perguntas com que o classificador vai ser treinado e testado, em um arquivo CSV com a pergunta e o tipo. Os tipos são: geral (documentos públicos), pessoal com a consulta (na v1: faltas, falta agendada e professor) e fora do escopo. Notas, horários, calendário e caminho de processo ficam para depois da v1 (D-008): na v1, perguntas sobre eles entram como fora do escopo. O conjunto de teste é separado antes de qualquer treino.
 
 ## O que não faz
 
@@ -15,7 +15,7 @@ Cria o conjunto de perguntas com que o classificador vai ser treinado e testado,
 ## Pronta quando
 
 - [ ] Os tipos estão definidos e escritos em um lugar só.
-- [ ] Há pelo menos 40 perguntas por tipo. O número é uma proposta do agente e pode ser ajustado pelo grupo.
+- [ ] Há pelo menos 20 perguntas por tipo (são 5 tipos na v1: geral, faltas, falta agendada, professor e fora do escopo). O número é uma proposta do agente e pode ser ajustado pelo grupo.
 - [ ] As quatro pessoas escreveram parte das perguntas, com jeitos diferentes de perguntar (formal, gíria, erros de digitação, frases curtas).
 - [ ] As perguntas fora do escopo incluem casos difíceis: assuntos da faculdade que o chatbot não cobre e perguntas pessoais sobre outra pessoa.
 - [ ] O conjunto de teste (cerca de 20% do total) foi separado e guardado à parte antes do treino, e ninguém o usa para ajustar nada.

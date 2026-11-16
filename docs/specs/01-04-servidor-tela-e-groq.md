@@ -4,7 +4,7 @@
 
 ## O que faz
 
-Um servidor FastAPI em contêiner Docker com uma tela simples em HTML e JavaScript. A tela tem o campo de conversa, o aviso de que quem responde é uma inteligência artificial e o aviso de privacidade (`docs/wireframes.md`). O aluno digita uma pergunta e recebe a resposta escrita pela Groq, em português. Nesta tarefa, a Groq responde sem documentos nem Espaço Aluno: é a prova de que a ponta que escreve a resposta funciona. Também mede os limites do plano gratuito e testa os modelos.
+Um servidor FastAPI, rodando direto no computador de um integrante (sem Docker na v1, D-008), com uma tela simples em HTML e JavaScript. A tela tem o campo de conversa, o aviso de que quem responde é uma inteligência artificial e o aviso de privacidade (`docs/wireframes.md`). O aluno digita uma pergunta e recebe a resposta escrita pela Groq, em português. Nesta tarefa, a Groq responde sem documentos nem Espaço Aluno: é a prova de que a ponta que escreve a resposta funciona. Também mede os limites do plano gratuito e testa os modelos.
 
 ## O que não faz
 
@@ -14,7 +14,7 @@ Um servidor FastAPI em contêiner Docker com uma tela simples em HTML e JavaScri
 
 ## Pronta quando
 
-- [ ] O servidor sobe dentro de um contêiner Docker, no computador de um integrante.
+- [ ] O servidor sobe com um comando (uvicorn, em ambiente virtual Python), no computador de um integrante. Docker fica para depois da v1 (D-008).
 - [ ] A tela de conversa envia uma pergunta e mostra a resposta da Groq em português.
 - [ ] A chave da Groq vem de variável de ambiente e não está no repositório nem em log.
 - [ ] Os limites do plano gratuito da Groq foram lidos na conta e anotados, e uma resposta com várias chamadas seguidas foi testada (T-001).

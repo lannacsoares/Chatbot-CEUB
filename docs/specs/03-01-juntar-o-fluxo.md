@@ -4,7 +4,7 @@
 
 ## O que faz
 
-Liga todas as peças no servidor: o aluno faz login, o classificador decide o tipo da pergunta, a busca ou o leitor do Espaço Aluno trazem o conteúdo, e a Groq escreve a resposta. Pergunta geral responde com a fonte; pergunta pessoal usa só os campos necessários; fora do escopo diz que não tem conteúdo suficiente, sem chamar a Groq; pergunta mista usa as duas consultas. Ao fim da conversa, ou ao sair, descarta senha, sessão e dados.
+Liga todas as peças no servidor: o aluno faz login, o classificador decide o tipo da pergunta, a busca ou o leitor do Espaço Aluno trazem o conteúdo, e a Groq escreve a resposta. Pergunta geral responde com a fonte; pergunta pessoal usa só os campos necessários; fora do escopo diz que não tem conteúdo suficiente, sem chamar a Groq. Pergunta que mistura os dois tipos fica para depois da v1 (D-008). Ao fim da conversa, ou ao sair, descarta senha, sessão e dados.
 
 ## O que não faz
 
@@ -15,13 +15,12 @@ Liga todas as peças no servidor: o aluno faz login, o classificador decide o ti
 ## Pronta quando
 
 - [ ] As três rotas funcionam: geral com fonte, pessoal com o Espaço Aluno e fora do escopo sem chamar a Groq.
-- [ ] Uma pergunta mista usa as duas consultas e responde com as duas partes.
 - [ ] Quando a busca não acha trecho parecido o bastante, a resposta diz que não tem conteúdo suficiente e, quando possível, onde procurar (FR-11).
 - [ ] A resposta geral mostra o documento de origem (FR-12), e todas mostram o aviso de que é uma inteligência artificial e o lembrete de conferir no Espaço Aluno ou na secretaria.
 - [ ] Sessão expirada avisa e pede novo login (FR-13).
 - [ ] Ao sair, a senha, a sessão e os campos lidos deixam de existir no servidor; nada foi para disco nem para log.
 - [ ] À Groq vão só a pergunta e os trechos ou campos necessários: conferido olhando o que é enviado (D-007).
-- [ ] Tudo roda dentro do contêiner Docker.
+- [ ] Tudo roda com um comando só, no computador da demonstração (sem Docker na v1, D-008).
 
 ## Vem de
 

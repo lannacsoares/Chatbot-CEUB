@@ -8,7 +8,7 @@ documents_at: docs/
 tasks_at: docs/plan.md
 memory: journal
 observability: journal
-updated: 2026-11-09T19:42:00Z
+updated: 2026-11-11T23:50:14Z
 updated_by: Claude Code
 ---
 
@@ -44,6 +44,8 @@ Deduced: chatbot com interface de conversa que responde dúvidas de alunos do Un
 - O chatbot deve buscar sozinho a informação, ser "treinado" com os documentos abertos do UniCEUB e ter acesso ao Espaço Aluno do próprio aluno.
 - Quando o modelo errar, o aluno vê a fonte e um lembrete para conferir no Espaço Aluno ou na secretaria.
 - Descrição do trabalho feita pelo professor (colada pela Lanna): apresentação em aula, sem slides, com três pontos (intuição, código e funcionamento com demonstração); grupos de até 6 pessoas; Python fortemente recomendado; protótipo funcional e bem explicado vale mais que sistema complexo e inacabado. "Busca semântica" está entre as aplicações sugeridas. O texto não diz que é preciso treinar um modelo; a Lanna disse que o professor exige treino, então isso pode ter sido dito em aula.
+
+- A v1 é um MVP simples, só para a entrega da disciplina; o escopo amplo (Docker, nuvem, BERTimbau e outras evoluções) vira próximos passos depois da v1 (D-008, decidido por Erick em 2026-11-11, o grupo ainda confirma).
 
 ## Steps
 
@@ -183,6 +185,10 @@ O grupo aceitou a stack só em Python (D-006) e o envio à Groq só dos campos n
 
 Apresentação em aula na primeira quinzena de dezembro (data exata ainda não definida). O grupo aceitou uma frente por pessoa: (A) Espaço Aluno, (B) documentos, (C) classificador, (D) servidor, tela e Groq. Quem leva cada frente ainda será escolhido pelo grupo. O plano começa pelo teste de entrar no Espaço Aluno (o maior risco), em paralelo com os documentos, as perguntas de treino e o servidor. Escrito em `docs/plan.md`, com 11 tarefas em 3 fases e uma especificação por tarefa em `docs/specs/`. As metas de data (17/11, 29/11 e 6/12) foram propostas pelo agente.
 
+### scope · O que entra na v1
+
+Depois de uma análise de viabilidade (4 pessoas, cerca de 2 semanas), o plano completo foi considerado grande demais. Erick decidiu que a v1 é um MVP simples, só para a entrega da disciplina, e que o escopo amplo já mapeado (Docker, servidores e nuvem, BERTimbau e qualquer outra evolução) vai para os próximos passos, depois da v1. Registrado em D-008 e em `docs/next-steps.md`. Os cortes concretos (3 consultas pessoais, classificador simples, sem Docker, 20 perguntas de teste) foram propostos pelo agente e aceitos por Erick; o grupo ainda precisa confirmar.
+
 ## Decisions
 
 - D-001 · Serviço de modelo de IA: Groq no plano gratuito · decided
@@ -192,6 +198,7 @@ Apresentação em aula na primeira quinzena de dezembro (data exata ainda não d
 - D-005 · Hospedagem: no computador de um integrante, em contêiner Docker · decided
 - D-006 · Stack: só Python (FastAPI, sentence-transformers, scikit-learn, FAISS, pdfplumber, requests e BeautifulSoup) · decided
 - D-007 · Dados pessoais: só os campos necessários vão à Groq; nada em disco nem em log · decided
+- D-008 · A v1 é um MVP simples; o escopo amplo vira próximos passos depois da v1 · decided (o grupo ainda confirma)
 
 ## Open points
 
@@ -206,5 +213,8 @@ Apresentação em aula na primeira quinzena de dezembro (data exata ainda não d
 - Qual integrante hospeda o site na demonstração, e se a turma acessa só pela tela da demonstração ou também pelo celular (túnel gratuito, ainda não pesquisado). Vai para o plano.
 
 ## Next question
+
+O plano foi reduzido para a v1 (D-008, `docs/plan.md` versão 0.2). Ponto de decisão até 13/11: o resultado de 01-01 diz se as consultas pessoais são possíveis. As frases abaixo são do estado anterior e continuam valendo, com o escopo menor.
+
 
 O repositório está preparado (`AGENTS.md` com o bloco do Blueprint, `CLAUDE.md` e `GEMINI.md`, um guia por frente em `docs/playbooks/` e o diário em `.blueprint/journal/`). A primeira tarefa é a 01-01, Login e leitura do Espaço Aluno (`docs/specs/01-01-login-e-leitura-do-espaco-aluno.md`). O grupo escolhe quem leva cada frente (A, B, C, D), e a Lanna envia os PDFs para a 01-02 e informa a data da apresentação. Em paralelo, a Lanna pode enviar os PDFs dos documentos públicos.
