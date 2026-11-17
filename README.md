@@ -83,4 +83,7 @@ Cada pessoa leva uma frente e faz uma tarefa por vez, em ordem:
 
 ## Equipe
 
-Lanna, Sofia, Geovanna e Erick.
+- Erick Mendes
+- Geovanna Benedito
+- Lanna Soares
+- Sophia Melo
