@@ -200,6 +200,7 @@ Depois de uma análise de viabilidade (4 pessoas, cerca de 2 semanas), o plano c
 - D-007 · Dados pessoais: só os campos necessários vão à Groq; nada em disco nem em log · decided
 - D-008 · A v1 é um MVP simples; o escopo amplo vira próximos passos depois da v1 · decided (confirmado em 2026-11-25)
 - D-009 · "Falta agendada" sai do projeto; classificador com 4 tipos · decided
+- D-010 · BERTimbau + regressão volta como classificador da v1 (90% no teste) · decided
 
 ## Open points
 

@@ -25,6 +25,9 @@ Qual o próximo passo para começar o desenvolvimento. Erick escolheu a frente C
 - Tarefa 03-02 adiantada: `avaliacao/perguntas_teste.csv` (14 gerais com artigo, 6 pessoais, 10 fora do escopo) e `avaliacao/medir.py`. Medição de "antes": precisão 0/20, honestidade 9/10, tempo 100% (mediana 3,2 s); o modelo inventou em 6 das 14 gerais.
 - Aviso para a frente B: o PDF de Normas de TCC sai com as palavras grudadas no pdfplumber.
 
+- Classificador: 60 perguntas novas do agente (100 no total); teste separado e congelado. TF-IDF deu 75%. A pedido de Erick, o BERTimbau entrou (D-010): BERTimbau + regressão foi escolhido por validação cruzada e deu 90% no teste (fora do escopo reconhecido: 80%, meta 90%).
+- A comparação foi encerrada pelo Claude Code por falta de memória, mas depois de salvar o modelo.
+
 ## Em aberto
 
 - Ligar a retenção zero na conta da Groq antes de dados reais (recomendado; Erick confirma).

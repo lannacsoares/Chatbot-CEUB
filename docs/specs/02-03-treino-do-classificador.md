@@ -1,6 +1,6 @@
 # Treino do classificador
 
-**Fase:** 2 · Busca, treino e consultas · **Frente:** C · Classificador · **Situação:** em andamento (treinado; meta não atingida)
+**Fase:** 2 · Busca, treino e consultas · **Frente:** C · Classificador · **Situação:** feita (falta a conferência de outra pessoa do grupo)
 
 ## O que faz
 
@@ -56,3 +56,31 @@ Depende de: 01-03.
   - "Quem ministra Programação Orientada a Objetos pra mim?" virou `fora_do_escopo`.
 - Com o limite de confiança de 50%, muitas previsões caem para `fora_do_escopo`. Isso protege contra invenção, mas também manda para "não sei" perguntas válidas, como "quem da aula de IA" (42%).
 - **Próximo passo:** mais perguntas de treino, escritas por pessoas, sobretudo na fronteira entre regra de faltas (`geral`) e faltas do aluno (`faltas`), e em pedidos de notas. O teste não muda. Retreinar e medir de novo com o mesmo `teste.csv`.
+
+### Comparação com o BERTimbau (2026-11-25, D-010)
+
+Rodar: `pip install -r classificador/requirements.txt` e `python classificador/comparar.py` (cerca de 10 minutos em CPU; na primeira vez baixa o BERTimbau, uns 420 MB).
+
+**1. Escolha só no treino** (validação cruzada em 5 dobras, F1 médio):
+
+| Modelo | F1 médio |
+|---|---|
+| TF-IDF + regressão | 0,69 ± 0,13 |
+| **BERTimbau + regressão (escolhido)** | **0,83 ± 0,07** |
+| BERTimbau ajustado | 0,79 ± 0,13 |
+
+**2. Medida única no teste congelado** (20 perguntas):
+
+| Modelo | Acerto | F1 | Fora do escopo reconhecido | ms por pergunta |
+|---|---|---|---|---|
+| TF-IDF + regressão | 75% | 0,75 | 60% | 0,2 |
+| **BERTimbau + regressão** | **90%** | **0,90** | **80%** | 10 |
+| BERTimbau ajustado | 85% | 0,85 | 60% | 10 |
+
+- **Meta de acerto (80%): atingida.** Meta de fora do escopo reconhecido (90%): **não atingida, ficou em 80%.**
+- Os 2 erros no teste:
+  - "Quando começam as férias segundo o calendário acadêmico?" virou `geral`;
+  - "quantas faltas posso ter no maximo numa disciplina?" virou `faltas`.
+- Com 5 perguntas fora do escopo no teste, cada erro vale 20 pontos. Para medir com mais segurança, é preciso um teste maior.
+- O modelo salvo funciona sem internet: o BERTimbau vem do cache. A primeira pergunta leva cerca de 20 s para carregar o modelo; depois, cerca de 10 ms por pergunta.
+- Ainda erra a fronteira entre a regra de faltas e as faltas do aluno ("qual o limite de faltas" sai como `faltas`, 53%). Mais exemplos de treino nessa fronteira devem ajudar.

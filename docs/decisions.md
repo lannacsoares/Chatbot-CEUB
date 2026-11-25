@@ -99,3 +99,25 @@ Todas as decisões do projeto, em um só lugar, a mais nova por último. Uma dec
 - **Fontes:** respostas em `docs/perguntas-para-o-grupo.md`.
 - **Situação:** decided
 - **Para testar:** nada a testar.
+
+## D-010 · BERTimbau volta para o classificador da v1
+
+- **Decisão:** o classificador da v1 passa a ser o BERTimbau (`neuralmind/bert-base-portuguese-cased`) congelado, que transforma cada pergunta em vetor, com uma regressão logística treinada em cima. O TF-IDF fica como linha de base. O ajuste fino do BERTimbau também foi treinado e medido, para comparação.
+- **Motivo:**
+  - Erick achou a regressão sobre TF-IDF fraca: 75% de acerto no teste, abaixo da meta de 80%.
+  - O BERTimbau entende o sentido da frase e treina em minutos na CPU do computador de Erick, sem Colab.
+  - A escolha entre os três foi feita por validação cruzada só no treino, e o escolhido também foi o melhor no teste: 90%.
+- **Alternativas:**
+  - manter o TF-IDF e escrever mais perguntas;
+  - só o ajuste fino (85% no teste; com 80 exemplos tende a decorar).
+- **Efeito em decisões anteriores:** muda D-008 só no classificador. O BERTimbau no ajuste dos embeddings continua fora da v1.
+- **Custos e riscos:**
+  - nenhum custo em dinheiro;
+  - baixa ~650 MB uma vez (PyTorch e o modelo), que ficam no cache do usuário;
+  - carregar o modelo leva cerca de 20 s na primeira pergunta;
+  - cada pergunta leva cerca de 10 ms;
+  - funciona sem internet depois de baixado.
+- **Decidido por:** Erick · **Data:** 2026-11-25
+- **Fontes:** `classificador/comparar.py` e os resultados em `docs/specs/02-03-treino-do-classificador.md`.
+- **Situação:** decided
+- **Para testar:** a medição do tempo de partida do servidor com o modelo carregado (T-007), em 03-02.
