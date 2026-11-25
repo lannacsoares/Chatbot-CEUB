@@ -79,3 +79,15 @@ Critérios usados, vindos do projeto: custo zero (NFR-01); demonstração ao viv
 - Os limites exatos do plano gratuito da Groq, que só aparecem na conta. Se bastam para respostas com várias chamadas de ferramenta, vai para o plano de testes.
 - Se há modelo gratuito na Groq com boa chamada de ferramentas e bom português. Vai para o plano de testes.
 - Os limites atuais da cota gratuita do Gemini, que também só aparecem dentro do AI Studio.
+
+## T-003 · O que a Groq faz com os dados (lido em 2026-11-25)
+
+Fontes: https://console.groq.com/docs/your-data (sem data na página) e https://groq.com/privacy-policy/ (em vigor desde 12/11/2025).
+
+- **Retenção:** por padrão, a Groq não guarda o texto das perguntas e respostas da API. Guarda só metadados de uso (tamanho, datas, desempenho), sem o conteúdo.
+- **Exceções:** o texto pode ser guardado por até 30 dias, em servidores do Google Cloud nos EUA, só para investigar erros que afetam o serviço ou suspeita de abuso (por exemplo, contornar o limite de uso).
+- **Retenção zero (ZDR):** a página diz que todos os clientes podem ligar a retenção zero em Data Controls (https://console.groq.com/settings/data-controls). Com ela, nem essas exceções guardam texto. A página não cita o plano gratuito à parte; "todos os clientes" sugere que vale para ele.
+- **Treino:** as páginas lidas não dizem se o texto da API é usado para treinar modelos. A política de privacidade remete ao contrato de serviço e ao adendo de processamento de dados, que não foram lidos.
+- **Plano gratuito e pago:** as páginas lidas não fazem diferença entre eles quanto a dados.
+
+**Consequência para o projeto:** ligar a retenção zero na conta da Groq usada pelo grupo antes de qualquer dado real do Espaço Aluno passar por ela, e manter D-007 (só os campos necessários). A questão do treino fica em aberto até alguém ler o contrato de serviço.

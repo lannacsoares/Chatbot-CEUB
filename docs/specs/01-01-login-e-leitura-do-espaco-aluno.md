@@ -4,7 +4,7 @@
 
 ## O que faz
 
-Um script em Python que entra no Espaço Aluno (ea.uniceub.br) com a conta de um integrante do grupo, chega ao `/Painel`, abre a página de uma disciplina e mostra os campos de faltas e professor extraídos da página. Também anota o que o login exige (captcha, verificação em dois passos) e por quanto tempo a sessão dura.
+Um script em Python que entra no Espaço Aluno (ea.ceub.br (antes ea.uniceub.br)) com a conta de um integrante do grupo, chega ao `/Painel`, abre a página de uma disciplina e mostra os campos de faltas e professor extraídos da página. Também anota o que o login exige (captcha, verificação em dois passos) e por quanto tempo a sessão dura.
 
 ## O que não faz
 

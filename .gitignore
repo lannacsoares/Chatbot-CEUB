@@ -41,3 +41,6 @@ Chatbot UniCEUB*.pdf
 .idea/
 .DS_Store
 Thumbs.db
+
+# Resultados de medição (podem ter respostas; ficam locais)
+avaliacao/resultados/
