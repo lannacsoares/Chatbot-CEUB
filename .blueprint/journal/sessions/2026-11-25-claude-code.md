@@ -21,6 +21,10 @@ Qual o próximo passo para começar o desenvolvimento. Erick escolheu a frente C
 
 - Tarefa 01-04 feita no ramo `frente-d-servidor`: servidor FastAPI, tela e cliente da Groq em `servidor/`; T-001, T-002 (escolhido openai/gpt-oss-120b; llama-3.3-70b não existe mais na Groq) e T-003 (em `docs/research.md`). A chave fica na variável de ambiente do usuário, nunca em arquivo.
 
+- PR #3 aberto (servidor). Correções no servidor: chave lida também das variáveis de usuário do Windows; recusa de assuntos fora do UniCEUB; negrito na tela.
+- Tarefa 03-02 adiantada: `avaliacao/perguntas_teste.csv` (14 gerais com artigo, 6 pessoais, 10 fora do escopo) e `avaliacao/medir.py`. Medição de "antes": precisão 0/20, honestidade 9/10, tempo 100% (mediana 3,2 s); o modelo inventou em 6 das 14 gerais.
+- Aviso para a frente B: o PDF de Normas de TCC sai com as palavras grudadas no pdfplumber.
+
 ## Em aberto
 
 - Ligar a retenção zero na conta da Groq antes de dados reais (recomendado; Erick confirma).
