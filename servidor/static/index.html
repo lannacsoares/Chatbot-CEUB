@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chatbot UniCEUB</title>
+<style>
+  :root {
+    --fundo: #f6f5f7; --cartao: #ffffff; --texto: #1d1b20; --suave: #6b6570;
+    --borda: #e3dfe6; --marca: #b0126f; --marca-texto: #ffffff;
+    --bot: #f1edf3; --aviso: #fff6e5; --aviso-borda: #f0d49a; --erro: #b3261e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fundo: #151317; --cartao: #1f1c22; --texto: #ece7ef; --suave: #a59dab;
+      --borda: #36313b; --marca: #e0559f; --marca-texto: #1a0f15;
+      --bot: #2a2530; --aviso: #2e2717; --aviso-borda: #6b5626; --erro: #f2867f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fundo); color: var(--texto);
+         font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .app { max-width: 760px; margin: 0 auto; min-height: 100dvh; display: flex; flex-direction: column; padding: 0 16px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--borda); }
+  header h1 { font-size: 1.1rem; margin: 0; }
+  header h1 span { color: var(--marca); }
+  button { font: inherit; cursor: pointer; border-radius: 8px; }
+  .secundario { background: transparent; color: var(--texto); border: 1px solid var(--borda); padding: 6px 12px; }
+  .aviso { background: var(--aviso); border: 1px solid var(--aviso-borda); border-radius: 8px; padding: 10px 12px; margin: 12px 0 0; font-size: .9rem; }
+  .aviso summary { cursor: pointer; font-weight: 600; }
+  .aviso p { margin: 8px 0 0; }
+  #conversa { flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 16px 0; }
+  .msg { max-width: 85%; padding: 10px 14px; border-radius: 12px; white-space: pre-wrap; word-wrap: break-word; }
+  .bot { background: var(--bot); align-self: flex-start; border-bottom-left-radius: 4px; }
+  .voce { background: var(--marca); color: var(--marca-texto); align-self: flex-end; border-bottom-right-radius: 4px; }
+  .meta { display: block; margin-top: 6px; font-size: .75rem; color: var(--suave); }
+  .erro { color: var(--erro); }
+  form { position: sticky; bottom: 0; background: var(--fundo); display: flex; gap: 8px; padding: 12px 0 16px; border-top: 1px solid var(--borda); }
+  textarea { flex: 1; resize: none; font: inherit; color: var(--texto); background: var(--cartao); border: 1px solid var(--borda); border-radius: 8px; padding: 10px; min-height: 44px; max-height: 160px; }
+  textarea:focus, button:focus-visible { outline: 2px solid var(--marca); outline-offset: 1px; }
+  .enviar { background: var(--marca); color: var(--marca-texto); border: 0; padding: 0 18px; font-weight: 600; }
+  .enviar:disabled { opacity: .5; cursor: wait; }
+  .ia { text-align: center; font-size: .8rem; color: var(--suave); margin: -8px 0 12px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Chatbot <span>UniCEUB</span></h1>
+    <button class="secundario" id="nova" type="button">Nova conversa</button>
+  </header>
+
+  <details class="aviso">
+    <summary>Aviso de privacidade</summary>
+    <p>Esta conversa não é guardada: ao fechar a página ou clicar em "Nova conversa", tudo é apagado.
+       Sua pergunta é enviada ao serviço de IA Groq para escrever a resposta. Não digite senhas,
+       números de documentos ou dados de outras pessoas.</p>
+  </details>
+
+  <main id="conversa" aria-live="polite"></main>
+
+  <form id="form">
+    <textarea id="pergunta" rows="1" maxlength="1000" placeholder="Digite sua pergunta" aria-label="Sua pergunta" required></textarea>
+    <button class="enviar" id="enviar" type="submit">Enviar</button>
+  </form>
+  <p class="ia">Quem responde é uma inteligência artificial e pode errar. Confira no Espaço Aluno ou na secretaria.</p>
+</div>
+
+<script>
+  const conversa = document.getElementById("conversa");
+  const form = document.getElementById("form");
+  const campo = document.getElementById("pergunta");
+  const botao = document.getElementById("enviar");
+  const SAUDACAO = "Olá! Pergunte sobre as regras da faculdade ou sobre as suas faltas e professores.\n" +
+                   "(Versão de teste: ainda sem os documentos e sem o Espaço Aluno.)";
+
+  function mostrar(texto, quem, meta, erro) {
+    const div = document.createElement("div");
+    div.className = "msg " + quem + (erro ? " erro" : "");
+    div.textContent = texto;
+    if (meta) { const s = document.createElement("span"); s.className = "meta"; s.textContent = meta; div.appendChild(s); }
+    conversa.appendChild(div);
+    div.scrollIntoView({ behavior: "smooth", block: "end" });
+    return div;
+  }
+
+  function recomecar() { conversa.replaceChildren(); mostrar(SAUDACAO, "bot"); campo.focus(); }
+
+  form.addEventListener("submit", async (ev) => {
+    ev.preventDefault();
+    const pergunta = campo.value.trim();
+    if (!pergunta) return;
+    mostrar(pergunta, "voce");
+    campo.value = ""; botao.disabled = true;
+    const espera = mostrar("Pensando…", "bot");
+    try {
+      const r = await fetch("/api/perguntar", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pergunta }),
+      });
+      const dados = await r.json();
+      espera.remove();
+      if (!r.ok) mostrar(dados.detail || "Erro ao responder.", "bot", null, true);
+      else mostrar(dados.resposta, "bot", `${dados.modelo} · ${dados.segundos.toLocaleString("pt-BR")} s`);
+    } catch {
+      espera.remove();
+      mostrar("Não foi possível falar com o servidor.", "bot", null, true);
+    } finally { botao.disabled = false; campo.focus(); }
+  });
+
+  campo.addEventListener("keydown", (ev) => {
+    if (ev.key === "Enter" && !ev.shiftKey) { ev.preventDefault(); form.requestSubmit(); }
+  });
+  document.getElementById("nova").addEventListener("click", recomecar);
+  recomecar();
+</script>
+</body>
+</html>

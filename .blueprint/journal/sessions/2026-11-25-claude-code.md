@@ -19,7 +19,11 @@ Qual o próximo passo para começar o desenvolvimento. Erick escolheu a frente C
 - Respostas do grupo registradas (`docs/perguntas-para-o-grupo.md`): frentes no plano, D-008 confirmado, D-009 ("falta agendada" sai; classificador com 4 tipos), 27/11 é entrega parcial. Erick escreve todas as perguntas de exemplo.
 - 8 PDFs oficiais baixados do InfoCentral para `documentos/` (com permissão de Erick). 4 têm texto; 4 são imagens escaneadas e precisam de OCR (`documentos/README.md`). O Espaço Aluno não abriu no navegador (página de erro), então nada foi buscado lá.
 
+- Tarefa 01-04 feita no ramo `frente-d-servidor`: servidor FastAPI, tela e cliente da Groq em `servidor/`; T-001, T-002 (escolhido openai/gpt-oss-120b; llama-3.3-70b não existe mais na Groq) e T-003 (em `docs/research.md`). A chave fica na variável de ambiente do usuário, nunca em arquivo.
+
 ## Em aberto
+
+- Ligar a retenção zero na conta da Groq antes de dados reais (recomendado; Erick confirma).
 
 - Faltam 10 perguntas por tipo, escritas pelas quatro pessoas, antes de separar o teste.
 - Data da apresentação final; refazer as metas do plano.
