@@ -1,0 +1,21 @@
+pergunta,tipo,autor
+Me fala minhas faltas em todas as materias,faltas,agente
+ja reprovei por falta em alguma coisa esse semestre?,faltas,agente
+ainda posso faltar em redes ou ja to no limite?,faltas,agente
+faltei muito em compiladores?,faltas,agente
+Em qual disciplina eu tenho mais faltas?,faltas,agente
+Quando começam as férias segundo o calendário acadêmico?,fora_do_escopo,agente
+em que sala é minha aula de redes,fora_do_escopo,agente
+Que dia é a prova final de Cálculo?,fora_do_escopo,agente
+me ajuda a fazer meu trabalho de física,fora_do_escopo,agente
+quanto eu tirei na prova de banco de dados,fora_do_escopo,agente
+existe minimo de avaliações por semestre?,geral,agente
+Qual é o limite de faltas permitido em uma disciplina?,geral,agente
+Como funciona o aproveitamento de disciplinas cursadas em outra faculdade?,geral,agente
+Como funciona a transferência de outra faculdade para o CEUB?,geral,agente
+quantas faltas posso ter no maximo numa disciplina?,geral,agente
+meu prof de redes é quem?,professor,agente
+Qual professor me dá aula de Sistemas Operacionais?,professor,agente
+Quem ministra Programação Orientada a Objetos pra mim?,professor,agente
+qm é o professor d estatistica,professor,agente
+prof de física 2?,professor,agente

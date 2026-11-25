@@ -39,3 +39,63 @@ pergunta,tipo,autor
 "me ajuda a fazer meu trabalho de física",fora_do_escopo,agente
 "Quem ganhou o jogo do Flamengo ontem?",fora_do_escopo,agente
 "onde fica o restaurante mais barato perto do campus",fora_do_escopo,agente
+"quantas faltas posso ter no maximo numa disciplina?",geral,agente
+"O que significa a menção MI?",geral,agente
+"como funciona o RED pra quem ta doente",geral,agente
+"Gestante tem direito a fazer as atividades em casa?",geral,agente
+"qual o prazo pra recorrer da nota na coordenação",geral,agente
+"Posso trancar o curso mais de uma vez?",geral,agente
+"o que acontece se eu abandonar o curso por dois semestres",geral,agente
+"Quantas horas de atividade complementar valem por tipo de atividade?",geral,agente
+"quem corrige os trabalhos do regime domiciliar?",geral,agente
+"Atleta convocado pela seleção pode pedir regime especial?",geral,agente
+"qual a diferença entre trancamento e cancelamento de matrícula",geral,agente
+"Quantos encontros de orientação de TCC são obrigatórios?",geral,agente
+"existe minimo de avaliações por semestre?",geral,agente
+"Como funciona a transferência de outra faculdade para o CEUB?",geral,agente
+"reprovação por falta conta como pré-requisito?",geral,agente
+"quantas faltas eu ja levei em calculo 2",faltas,agente
+"Estou com quantas faltas em Programação Orientada a Objetos?",faltas,agente
+"ja reprovei por falta em alguma coisa esse semestre?",faltas,agente
+"Qual a minha situação de frequência nas disciplinas deste semestre?",faltas,agente
+"posso faltar mais quantas aulas de redes?",faltas,agente
+"to com quantos % de presença em sistemas operacionais",faltas,agente
+"Me fala minhas faltas em todas as materias",faltas,agente
+"quantas faltas eu tenho",faltas,agente
+"Em qual disciplina eu tenho mais faltas?",faltas,agente
+"faltei muito em compiladores?",faltas,agente
+"qnt de falta em eng de software",faltas,agente
+"Minha frequência em Estatística está acima de 75%?",faltas,agente
+"quantas vezes eu faltei em IA esse semestre",faltas,agente
+"Verifica minhas faltas em Banco de Dados II, por favor.",faltas,agente
+"to reprovando por falta em algo?",faltas,agente
+"quem é o docente de compiladores na minha turma",professor,agente
+"Qual professor me dá aula de Sistemas Operacionais?",professor,agente
+"meu prof de redes é quem?",professor,agente
+"Quem ministra Programação Orientada a Objetos pra mim?",professor,agente
+"nome do professor de estatistica",professor,agente
+"Quem é o responsável pela minha turma de Cálculo II?",professor,agente
+"qual o professor da materia de IA",professor,agente
+"Preciso saber quem é meu professor de Banco de Dados II.",professor,agente
+"quem leciona eng de software pra minha turma?",professor,agente
+"prof de física 2?",professor,agente
+"Quais professores eu tenho neste semestre?",professor,agente
+"quem vai me dar aula de compiladores",professor,agente
+"Me informa o nome do professor de Sistemas Distribuídos.",professor,agente
+"quem é o professor que dá estrutura de dados na minha sala",professor,agente
+"Qual docente está com a minha disciplina de Arquitetura de Computadores?",professor,agente
+"qual minha menção em estatistica?",fora_do_escopo,agente
+"Que dia é a prova final de Cálculo?",fora_do_escopo,agente
+"em que sala é minha aula de redes",fora_do_escopo,agente
+"Quando é o período de rematrícula?",fora_do_escopo,agente
+"como eu solicito segunda via do boleto pelo espaço aluno",fora_do_escopo,agente
+"Quem é o professor do meu amigo em Cálculo?",fora_do_escopo,agente
+"me inscreve na disciplina de IA",fora_do_escopo,agente
+"Tenho alguma falta agendada essa semana?",fora_do_escopo,agente
+"qual a capital da australia",fora_do_escopo,agente
+"Me conta uma piada",fora_do_escopo,agente
+"resolve essa integral pra mim: x^2 dx",fora_do_escopo,agente
+"Qual o melhor notebook pra programar?",fora_do_escopo,agente
+"oi tudo bem?",fora_do_escopo,agente
+"Cancela minha matrícula agora",fora_do_escopo,agente
+"quanto eu tirei na prova de banco de dados",fora_do_escopo,agente

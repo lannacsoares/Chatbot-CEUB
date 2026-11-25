@@ -1,6 +1,6 @@
 # Treino do classificador
 
-**Fase:** 2 · Busca, treino e consultas · **Frente:** C · Classificador · **Situação:** em andamento (script pronto, espera o teste de 01-03)
+**Fase:** 2 · Busca, treino e consultas · **Frente:** C · Classificador · **Situação:** em andamento (treinado; meta não atingida)
 
 ## O que faz
 
@@ -14,11 +14,11 @@ Treina o classificador de tipo de pergunta com o conjunto de 01-03. Na v1 usa TF
 
 ## Pronta quando
 
-- [ ] A linha de base foi treinada e medida.
-- [ ] Há uma tabela com acerto geral, acerto e F1 por tipo e a matriz de confusão, no conjunto de teste (T-005).
-- [ ] O grupo combinou a meta de acerto antes do treino, e o resultado diz se ela foi atingida. Em especial, o acerto nas perguntas fora do escopo está separado, por pesar em NFR-08.
-- [ ] O que o classificador faz quando tem pouca confiança está decidido e anotado (proposta: seguir o caminho que admite não saber).
-- [ ] O modelo escolhido está salvo em arquivo e roda em CPU dentro do tempo de NFR-09.
+- [x] A linha de base foi treinada e medida.
+- [x] Há uma tabela com acerto geral, acerto e F1 por tipo e a matriz de confusão, no conjunto de teste (T-005).
+- [x] O grupo combinou a meta de acerto antes do treino (80% geral e 90% fora do escopo), e o resultado diz se ela foi atingida. Em especial, o acerto nas perguntas fora do escopo está separado, por pesar em NFR-08.
+- [x] O que o classificador faz quando tem pouca confiança está decidido (abaixo de 50% vira fora do escopo) e anotado (proposta: seguir o caminho que admite não saber).
+- [x] O modelo escolhido está salvo em arquivo e roda em CPU (0,16 ms por pergunta) dentro do tempo de NFR-09.
 - [x] O script de treino está no repositório, para ser mostrado na apresentação (`classificador/treinar.py`).
 
 ## Vem de
@@ -36,3 +36,23 @@ Modelo: TF-IDF de palavras (1 e 2 palavras) e de pedaços de 3 a 5 letras, para 
 **Situação em 2026-11-25:** o fluxo foi testado numa cópia descartável, só com o rascunho de 50 perguntas. Deu 60% no teste e 0,23 ms por pergunta. Esse número não vale como resultado: o treino real espera as perguntas do grupo, a separação do teste e a meta de acerto combinada.
 
 Depende de: 01-03.
+
+### Primeiro treino real (2026-11-25)
+
+80 perguntas no treino e 20 no teste (5 por tipo). Na validação cruzada, só com o treino, o melhor C foi 0,5 (F1 médio 0,69).
+
+| Tipo | Precisão | Revocação | F1 |
+|---|---|---|---|
+| geral | 0,75 | 0,60 | 0,67 |
+| faltas | 0,62 | 1,00 | 0,77 |
+| professor | 1,00 | 0,80 | 0,89 |
+| fora_do_escopo | 0,75 | 0,60 | 0,67 |
+
+- **Acerto geral: 75%** (meta 80%, **não atingida**). **Fora do escopo reconhecido: 60%** (meta 90%, **não atingida**).
+- Erros no teste:
+  - duas regras sobre limite de faltas foram classificadas como `faltas`: a palavra "faltas" pesa mais que o sentido;
+  - "me ajuda a fazer meu trabalho de física" virou `geral`;
+  - "quanto eu tirei na prova de banco de dados" virou `faltas`;
+  - "Quem ministra Programação Orientada a Objetos pra mim?" virou `fora_do_escopo`.
+- Com o limite de confiança de 50%, muitas previsões caem para `fora_do_escopo`. Isso protege contra invenção, mas também manda para "não sei" perguntas válidas, como "quem da aula de IA" (42%).
+- **Próximo passo:** mais perguntas de treino, escritas por pessoas, sobretudo na fronteira entre regra de faltas (`geral`) e faltas do aluno (`faltas`), e em pedidos de notas. O teste não muda. Retreinar e medir de novo com o mesmo `teste.csv`.
