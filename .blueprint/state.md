@@ -129,7 +129,7 @@ Foi explicado como o token funciona (crachá temporário do login; o chatbot age
 
 ### system-description · Checagem do Espaço Aluno
 
-Com a conta da Lanna, pelo F12 (aba Rede), na página de uma disciplina: o Espaço Aluno (ea.uniceub.br) roda em ASP.NET MVC (servidor IIS). A página com as faltas e o professor chega como HTML pronto (tipo document), não como JSON. Em Fetch/XHR só apareceram scripts e estilos, sem API de dados. Os cabeçalhos de pedido saíram "provisórios" (service worker), então ainda não se viu se há cookie de sessão ou cabeçalho Authorization. Os endereços das páginas levam parâmetros codificados.
+Com a conta da Lanna, pelo F12 (aba Rede), na página de uma disciplina: o Espaço Aluno (ea.ceub.br (antes ea.uniceub.br)) roda em ASP.NET MVC (servidor IIS). A página com as faltas e o professor chega como HTML pronto (tipo document), não como JSON. Em Fetch/XHR só apareceram scripts e estilos, sem API de dados. Os cabeçalhos de pedido saíram "provisórios" (service worker), então ainda não se viu se há cookie de sessão ou cabeçalho Authorization. Os endereços das páginas levam parâmetros codificados.
 
 Depois, na aba Application: não há token no Local Storage nem no Session Storage. Entre os cookies (só os nomes foram vistos) há `ASP.NET_SessionId` e `__RequestVerificationToken` (proteção contra falsificação de formulário, não é token de login); os demais são de análise e marketing. Não apareceu `.ASPXAUTH`. Leitura: o login parece ser guardado como sessão no servidor, identificada pelo cookie `ASP.NET_SessionId`.
 

@@ -54,7 +54,7 @@ Um site. Onde ele roda ainda não foi decidido; isso entra na etapa de arquitetu
   - o professor concordou com o uso do login do aluno no site do UniCEUB para consultar o Espaço Aluno;
   - no início, só os logins do grupo;
   - verba e prazo ainda não informados (perguntas da etapa de requisitos).
-- **Sistemas a conectar:** Espaço Aluno (`ea.uniceub.br`) e os documentos públicos do UniCEUB. Pelo que o grupo viu, o Espaço Aluno é feito em ASP.NET MVC, entrega as páginas como HTML pronto e guarda o login como sessão por cookie (`ASP.NET_SessionId`), sem token no armazenamento do navegador.
+- **Sistemas a conectar:** Espaço Aluno (`ea.ceub.br (antes ea.uniceub.br)`) e os documentos públicos do UniCEUB. Pelo que o grupo viu, o Espaço Aluno é feito em ASP.NET MVC, entrega as páginas como HTML pronto e guarda o login como sessão por cookie (`ASP.NET_SessionId`), sem token no armazenamento do navegador.
 - **Decidido pelo agente:** nada.
 
 ## Pontos em aberto

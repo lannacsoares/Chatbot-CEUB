@@ -51,7 +51,7 @@ A lista completa está em `docs/next-steps.md`.
 
 | Para onde | O que vai | O que nunca vai |
 |---|---|---|
-| Espaço Aluno (ea.uniceub.br) | Usuário e senha do próprio aluno, no login, e os pedidos de página | Nada além disso |
+| Espaço Aluno (ea.ceub.br (antes ea.uniceub.br)) | Usuário e senha do próprio aluno, no login, e os pedidos de página | Nada além disso |
 | Groq | A pergunta e, conforme o tipo, trechos de documentos públicos ou os campos extraídos do Espaço Aluno | Senha, cookie de sessão, páginas inteiras, motivo de abonos de falta, nome e matrícula |
 | Kaggle ou Colab (treino) | Perguntas de exemplo escritas pelo grupo e trechos de documentos públicos | Qualquer dado real de aluno |
 
