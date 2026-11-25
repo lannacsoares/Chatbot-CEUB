@@ -1,6 +1,6 @@
 # Ensaio da apresentação
 
-**Fase:** 3 · Juntar, medir e ensaiar · **Frente:** D · Servidor · **Situação:** não iniciada
+**Fase:** 3 · Juntar, medir e ensaiar · **Frente:** D · Servidor · **Situação:** em andamento (roteiro rascunhado em `docs/roteiro-apresentacao.md`)
 
 ## O que faz
 
