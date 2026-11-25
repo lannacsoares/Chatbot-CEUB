@@ -1,0 +1,41 @@
+pergunta,tipo,autor
+"Qual é o limite de faltas permitido em uma disciplina?",geral,agente
+"qual a frequencia minima pra nao reprovar",geral,agente
+"Como funciona o trancamento de matrícula?",geral,agente
+"o que acontece se eu reprovar por falta?",geral,agente
+"Posso abonar falta com atestado médico?",geral,agente
+"qnts % de presença precisa ter pra passar",geral,agente
+"Qual a regra para fazer prova substitutiva?",geral,agente
+"o que diz o regulamento sobre plágio em trabalho",geral,agente
+"Como funciona o aproveitamento de disciplinas cursadas em outra faculdade?",geral,agente
+"existe regra pra revisão de nota?",geral,agente
+"Quantas faltas eu tenho em Cálculo?",faltas,agente
+"quantas faltas tenho em estrutura de dados",faltas,agente
+"to com muita falta em física?",faltas,agente
+"Qual é a minha frequência em Inteligência Artificial?",faltas,agente
+"minhas faltas",faltas,agente
+"qnts falta eu tenho no total esse semestre",faltas,agente
+"Já estourei o limite de faltas em alguma matéria?",faltas,agente
+"quantas aulas eu faltei de banco de dados",faltas,agente
+"Me mostra meu percentual de presença em cada disciplina.",faltas,agente
+"ainda posso faltar em redes ou ja to no limite?",faltas,agente
+"Quem é o professor de Cálculo?",professor,agente
+"quem da aula de banco de dados pra mim",professor,agente
+"Qual o nome do professor da minha turma de IA?",professor,agente
+"professor de física",professor,agente
+"quem é o prof de estrutura de dados esse semestre",professor,agente
+"Quem leciona Redes de Computadores na minha turma?",professor,agente
+"qual professor ta com a disciplina de algoritmos",professor,agente
+"Me diz quem são os professores das minhas matérias.",professor,agente
+"quem é meu professor de engenharia de software?",professor,agente
+"qm é o professor d estatistica",professor,agente
+"Qual foi minha nota na prova de Cálculo?",fora_do_escopo,agente
+"que horas começa minha aula de terça?",fora_do_escopo,agente
+"Quando começam as férias segundo o calendário acadêmico?",fora_do_escopo,agente
+"como abro um processo de revisão de nota no espaço aluno",fora_do_escopo,agente
+"Quantas faltas minha colega tem em Cálculo?",fora_do_escopo,agente
+"tranca minha matrícula pra mim",fora_do_escopo,agente
+"Qual a previsão do tempo para amanhã em Brasília?",fora_do_escopo,agente
+"me ajuda a fazer meu trabalho de física",fora_do_escopo,agente
+"Quem ganhou o jogo do Flamengo ontem?",fora_do_escopo,agente
+"onde fica o restaurante mais barato perto do campus",fora_do_escopo,agente

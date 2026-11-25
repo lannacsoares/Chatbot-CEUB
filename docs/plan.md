@@ -6,6 +6,8 @@
 
 ## Como o trabalho anda
 
+- **Atualização de 2026-11-25:** as metas de data abaixo já passaram sem nenhuma tarefa começada. Há uma entrega parcial em 27/11; a data da apresentação final ainda não foi informada, e as metas serão refeitas com ela. "Falta agendada" saiu (D-009): a v1 tem duas consultas pessoais, faltas e professor, e o classificador tem 4 tipos. As perguntas de exemplo são escritas por Erick. A demonstração roda no computador de Erick.
+
 - Cada pessoa leva uma frente e faz uma tarefa dela por vez. As fases seguem em ordem; dentro de uma fase, as tarefas de frentes diferentes andam ao mesmo tempo.
 - Uma tarefa é entregue com o jeito de testar: o que rodar ou abrir, e o que deve aparecer.
 - A tarefa só vira "feita" quando todos os itens de "Pronta quando" da especificação estão marcados. Quem marca é a pessoa da frente, e outra pessoa do grupo confere.
@@ -18,10 +20,10 @@
 
 | Frente | O que cuida | Tarefas | Quem |
 |---|---|---|---|
-| A · Espaço Aluno | Login e leitura das páginas | 01-01, 02-04 | A definir pelo grupo |
-| B · Documentos | PDFs, trechos, embeddings, busca e ajuste dos embeddings | 01-02, 02-01, 02-02 | A definir pelo grupo |
-| C · Classificador | Perguntas de exemplo e treino do classificador | 01-03, 02-03 | A definir pelo grupo |
-| D · Servidor | Servidor, tela, Groq, juntar tudo, medição e ensaio | 01-04, 03-01, 03-02, 03-03 | A definir pelo grupo |
+| A · Espaço Aluno | Login e leitura das páginas | 01-01, 02-04 | Lanna |
+| B · Documentos | PDFs, trechos, embeddings, busca e ajuste dos embeddings | 01-02, 02-01, 02-02 | Sophia e Lanna |
+| C · Classificador | Perguntas de exemplo e treino do classificador | 01-03, 02-03 | Erick |
+| D · Servidor | Servidor, tela, Groq, juntar tudo, medição e ensaio | 01-04, 03-01, 03-02, 03-03 | Geovanna e Erick |
 
 As quatro pessoas (Lanna, Sofia, Geovanna e Erick) escolhem a frente. Na terceira fase, todos ajudam a frente D. A frente A tem uma pessoa só e é o maior risco: quem terminar a sua tarefa da fase 1 antes ajuda a frente A.
 

@@ -198,7 +198,8 @@ Depois de uma análise de viabilidade (4 pessoas, cerca de 2 semanas), o plano c
 - D-005 · Hospedagem: no computador de um integrante, em contêiner Docker · decided
 - D-006 · Stack: só Python (FastAPI, sentence-transformers, scikit-learn, FAISS, pdfplumber, requests e BeautifulSoup) · decided
 - D-007 · Dados pessoais: só os campos necessários vão à Groq; nada em disco nem em log · decided
-- D-008 · A v1 é um MVP simples; o escopo amplo vira próximos passos depois da v1 · decided (o grupo ainda confirma)
+- D-008 · A v1 é um MVP simples; o escopo amplo vira próximos passos depois da v1 · decided (confirmado em 2026-11-25)
+- D-009 · "Falta agendada" sai do projeto; classificador com 4 tipos · decided
 
 ## Open points
 
@@ -213,6 +214,10 @@ Depois de uma análise de viabilidade (4 pessoas, cerca de 2 semanas), o plano c
 - Qual integrante hospeda o site na demonstração, e se a turma acessa só pela tela da demonstração ou também pelo celular (túnel gratuito, ainda não pesquisado). Vai para o plano.
 
 ## Next question
+
+Respostas de 2026-11-25 (Erick e a líder, `docs/perguntas-para-o-grupo.md`): frentes A Lanna, B Sophia e Lanna, C Erick, D Geovanna e Erick; entrega parcial em 27/11, apresentação final sem data; D-008 confirmado; metas de acerto (80% geral, 90% fora do escopo) e NFR-07 a NFR-09 aceitas; baixa confiança (< 50%) vira fora do escopo; falta agendada sai (D-009); abonos não mostram motivo; demonstração no computador de Erick; o professor aceita classificador e ajuste dos embeddings como treino. Os documentos públicos serão buscados pelo agente no navegador (web e Espaço Aluno de Erick).
+
+Em 2026-11-25: Erick leva a frente C. A 01-03 está em andamento (tipos, rascunho de 10 perguntas por tipo e scripts em `classificador/`); faltam as perguntas do grupo e a separação do teste. As metas de data do plano já passaram e precisam ser refeitas quando a data da apresentação for conhecida.
 
 O plano foi reduzido para a v1 (D-008, `docs/plan.md` versão 0.2). Ponto de decisão até 13/11: o resultado de 01-01 diz se as consultas pessoais são possíveis. As frases abaixo são do estado anterior e continuam valendo, com o escopo menor.
 

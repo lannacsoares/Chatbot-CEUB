@@ -84,7 +84,18 @@ Todas as decisões do projeto, em um só lugar, a mais nova por último. Uma dec
 - **Motivo:** o plano completo foi estimado em 24 a 34 pessoa-dias, contra 16 a 20 realmente disponíveis em cerca de 2 semanas de trabalho (estimativas do agente, não medidas). O professor pediu um protótipo funcional e bem explicado, em vez de um sistema complexo e inacabado. O maior risco (entrar no Espaço Aluno, T-008) ainda não foi testado, e cada tipo de consulta exige um leitor de página diferente.
 - **Alternativas:** manter o escopo completo (descartada pelo prazo); cortar o treino (descartada, D-004 continua valendo).
 - **Efeito em decisões anteriores:** D-004 continua: o treino segue fixo, em tamanho menor. D-005 muda em parte: o Docker sai da v1, e o computador de um integrante continua sendo onde roda. D-006 muda em parte: BERTimbau e Docker saem da v1. D-001, D-002, D-003 e D-007 não mudam.
-- **Decidido por:** Erick, em 2026-11-11, depois da análise de viabilidade do plano. O grupo ainda precisa confirmar (a revisão do PR da Lanna serve a isso).
+- **Decidido por:** Erick, em 2026-11-11, depois da análise de viabilidade do plano. Confirmado por Erick e a líder em 2026-11-25 (`docs/perguntas-para-o-grupo.md`).
 - **Fontes:** análise de viabilidade desta sessão, sobre `docs/plan.md`, `docs/requirements.md` e `docs/architecture.md`. Sem pesquisa externa.
 - **Situação:** decided
 - **Para testar:** T-008 decide, até 13/11, se as consultas pessoais da v1 são possíveis; sem isso, a v1 segue só com documentos públicos.
+
+## D-009 · "Falta agendada" sai do projeto
+
+- **Decisão:** a consulta de "falta agendada" (FR-04) sai da v1 e do classificador. A v1 tem duas consultas pessoais: faltas por matéria e professor. O classificador tem 4 tipos: geral, faltas, professor e fora do escopo. Uma pergunta sobre falta agendada conta como fora do escopo.
+- **Motivo:** o grupo não sabe a que a expressão se refere e acha que isso não existe no Espaço Aluno. Também tira trabalho de um prazo que encurtou (apresentação em 27/11).
+- **Alternativas:** manter o tipo e descobrir o significado na tarefa 01-01 (descartada pelo prazo).
+- **Efeito em decisões anteriores:** muda D-008 só na lista de consultas pessoais. As menções a "falta agendada" nos outros documentos ficam valendo como histórico; esta decisão prevalece.
+- **Decidido por:** Erick e a líder · **Data:** 2026-11-25
+- **Fontes:** respostas em `docs/perguntas-para-o-grupo.md`.
+- **Situação:** decided
+- **Para testar:** nada a testar.
