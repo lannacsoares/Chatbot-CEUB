@@ -74,10 +74,23 @@
   const SAUDACAO = "Olá! Pergunte sobre as regras da faculdade ou sobre as suas faltas e professores.\n" +
                    "(Versão de teste: ainda sem os documentos e sem o Espaço Aluno.)";
 
+  // Negrito (**texto**) sem usar innerHTML: o texto da IA nunca vira HTML.
+  function preencher(div, texto) {
+    texto.split(/(\*\*[^*\n]+\*\*)/g).forEach((parte) => {
+      if (/^\*\*[^*\n]+\*\*$/.test(parte)) {
+        const b = document.createElement("strong");
+        b.textContent = parte.slice(2, -2);
+        div.appendChild(b);
+      } else if (parte) {
+        div.appendChild(document.createTextNode(parte.replace(/^#{1,6}\s+/gm, "")));
+      }
+    });
+  }
+
   function mostrar(texto, quem, meta, erro) {
     const div = document.createElement("div");
     div.className = "msg " + quem + (erro ? " erro" : "");
-    div.textContent = texto;
+    preencher(div, texto);
     if (meta) { const s = document.createElement("span"); s.className = "meta"; s.textContent = meta; div.appendChild(s); }
     conversa.appendChild(div);
     div.scrollIntoView({ behavior: "smooth", block: "end" });
