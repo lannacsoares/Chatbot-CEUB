@@ -32,8 +32,22 @@ def modelo_atual() -> str:
     return os.environ.get("GROQ_MODELO", MODELO_PADRAO)
 
 
-def _cliente() -> Groq:
+def _chave() -> str | None:
+    """Lê GROQ_API_KEY do ambiente; no Windows, também das variáveis de
+    usuário (setx), para funcionar em terminais abertos antes do setx."""
     chave = os.environ.get("GROQ_API_KEY")
+    if not chave and os.name == "nt":
+        try:
+            import winreg
+            with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment") as k:
+                chave, _ = winreg.QueryValueEx(k, "GROQ_API_KEY")
+        except OSError:
+            chave = None
+    return chave or None
+
+
+def _cliente() -> Groq:
+    chave = _chave()
     if not chave:
         raise ErroGroq(503, "A chave da Groq não está configurada no servidor (GROQ_API_KEY).")
     return Groq(api_key=chave, max_retries=1, timeout=30)

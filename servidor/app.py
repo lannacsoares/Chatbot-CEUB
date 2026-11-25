@@ -13,7 +13,6 @@ Regras (NFR-05, NFR-10, D-007):
 - não há histórico: cada pergunta é respondida sozinha.
 """
 
-import os
 import time
 from pathlib import Path
 
@@ -22,7 +21,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from servidor.groq_cliente import ErroGroq, responder
+from servidor.groq_cliente import ErroGroq, _chave, responder
 
 AQUI = Path(__file__).resolve().parent
 app = FastAPI(title="Chatbot UniCEUB", docs_url=None, redoc_url=None)
@@ -46,7 +45,7 @@ def tela():
 
 @app.get("/api/saude")
 def saude():
-    return {"ok": True, "chave_groq": bool(os.environ.get("GROQ_API_KEY"))}
+    return {"ok": True, "chave_groq": bool(_chave())}
 
 
 @app.post("/api/perguntar", response_model=Resposta)
