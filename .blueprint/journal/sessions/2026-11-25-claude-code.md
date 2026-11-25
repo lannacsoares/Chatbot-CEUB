@@ -19,7 +19,18 @@ Qual o próximo passo para começar o desenvolvimento. Erick escolheu a frente C
 - Respostas do grupo registradas (`docs/perguntas-para-o-grupo.md`): frentes no plano, D-008 confirmado, D-009 ("falta agendada" sai; classificador com 4 tipos), 27/11 é entrega parcial. Erick escreve todas as perguntas de exemplo.
 - 8 PDFs oficiais baixados do InfoCentral para `documentos/` (com permissão de Erick). 4 têm texto; 4 são imagens escaneadas e precisam de OCR (`documentos/README.md`). O Espaço Aluno não abriu no navegador (página de erro), então nada foi buscado lá.
 
+- Tarefa 01-04 feita no ramo `frente-d-servidor`: servidor FastAPI, tela e cliente da Groq em `servidor/`; T-001, T-002 (escolhido openai/gpt-oss-120b; llama-3.3-70b não existe mais na Groq) e T-003 (em `docs/research.md`). A chave fica na variável de ambiente do usuário, nunca em arquivo.
+
+- PR #3 aberto (servidor). Correções no servidor: chave lida também das variáveis de usuário do Windows; recusa de assuntos fora do UniCEUB; negrito na tela.
+- Tarefa 03-02 adiantada: `avaliacao/perguntas_teste.csv` (14 gerais com artigo, 6 pessoais, 10 fora do escopo) e `avaliacao/medir.py`. Medição de "antes": precisão 0/20, honestidade 9/10, tempo 100% (mediana 3,2 s); o modelo inventou em 6 das 14 gerais.
+- Aviso para a frente B: o PDF de Normas de TCC sai com as palavras grudadas no pdfplumber.
+
+- Classificador: 60 perguntas novas do agente (100 no total); teste separado e congelado. TF-IDF deu 75%. A pedido de Erick, o BERTimbau entrou (D-010): BERTimbau + regressão foi escolhido por validação cruzada e deu 90% no teste (fora do escopo reconhecido: 80%, meta 90%).
+- A comparação foi encerrada pelo Claude Code por falta de memória, mas depois de salvar o modelo.
+
 ## Em aberto
+
+- Ligar a retenção zero na conta da Groq antes de dados reais (recomendado; Erick confirma).
 
 - Faltam 10 perguntas por tipo, escritas pelas quatro pessoas, antes de separar o teste.
 - Data da apresentação final; refazer as metas do plano.

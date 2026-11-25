@@ -18,6 +18,9 @@ from pathlib import Path
 
 import joblib
 
+# O modelo salvo pode conter classes de classificador/bert.py (D-010).
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 MODELO = Path(__file__).resolve().parent.parent / "models" / "classificador.joblib"
 LIMITE_CONFIANCA = 0.5
 

@@ -200,6 +200,7 @@ Depois de uma análise de viabilidade (4 pessoas, cerca de 2 semanas), o plano c
 - D-007 · Dados pessoais: só os campos necessários vão à Groq; nada em disco nem em log · decided
 - D-008 · A v1 é um MVP simples; o escopo amplo vira próximos passos depois da v1 · decided (confirmado em 2026-11-25)
 - D-009 · "Falta agendada" sai do projeto; classificador com 4 tipos · decided
+- D-010 · BERTimbau + regressão volta como classificador da v1 (90% no teste) · decided
 
 ## Open points
 
@@ -214,6 +215,8 @@ Depois de uma análise de viabilidade (4 pessoas, cerca de 2 semanas), o plano c
 - Qual integrante hospeda o site na demonstração, e se a turma acessa só pela tela da demonstração ou também pelo celular (túnel gratuito, ainda não pesquisado). Vai para o plano.
 
 ## Next question
+
+Em 2026-11-25, mais tarde: a 01-04 está feita no ramo `frente-d-servidor` (modelo openai/gpt-oss-120b; T-001 a T-003 feitos). A frente C espera as perguntas de Erick. As próximas tarefas da frente D (03-01) dependem das frentes A, B e C.
 
 Respostas de 2026-11-25 (Erick e a líder, `docs/perguntas-para-o-grupo.md`): frentes A Lanna, B Sophia e Lanna, C Erick, D Geovanna e Erick; entrega parcial em 27/11, apresentação final sem data; D-008 confirmado; metas de acerto (80% geral, 90% fora do escopo) e NFR-07 a NFR-09 aceitas; baixa confiança (< 50%) vira fora do escopo; falta agendada sai (D-009); abonos não mostram motivo; demonstração no computador de Erick; o professor aceita classificador e ajuste dos embeddings como treino. Os documentos públicos serão buscados pelo agente no navegador (web e Espaço Aluno de Erick).
 
