@@ -37,6 +37,8 @@ Arquivos: `avaliacao/perguntas_teste.csv` (20 de precisão: 14 gerais com artigo
 
 Marcação feita pelo agente, comparando cada resposta com o artigo; o grupo confere.
 
+**Atenção (2026-11-27):** as instruções à Groq mudaram depois desta medição (agora o chatbot sem documentos recusa em vez de explicar). Os números e a conclusão abaixo valem para a versão anterior, a do commit `e05e809`; o conjunto de teste não foi medido de novo.
+
 | Medida | Resultado | Meta |
 |---|---|---|
 | Precisão (NFR-07) | 0 de 20 (0%) | 80% |
